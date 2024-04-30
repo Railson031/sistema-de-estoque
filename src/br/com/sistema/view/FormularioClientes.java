@@ -7,6 +7,7 @@ package br.com.sistema.view;
 
 import br.com.sistema.dao.ClientesDAO;
 import br.com.sistema.model.Clientes;
+import br.com.sistema.utilitarios.Utilitarios;
 import javax.swing.JOptionPane;
 
 /**
@@ -334,6 +335,11 @@ public class FormularioClientes extends javax.swing.JFrame {
 
         btnNovo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sistema/imagens/novo.png"))); // NOI18N
         btnNovo.setText("NOVO");
+        btnNovo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnNovoActionPerformed(evt);
+            }
+        });
 
         btnSalvar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/br/com/sistema/imagens/salvar.png"))); // NOI18N
         btnSalvar.setText("SALVAR");
@@ -408,6 +414,8 @@ public class FormularioClientes extends javax.swing.JFrame {
     
         ClientesDAO dao = new ClientesDAO();
         dao.Salvar(obj);
+        Utilitarios util = new Utilitarios();
+        util.LimpaTela(painel_dados_pessoais);
     }//GEN-LAST:event_btnSalvarActionPerformed
 
     private void btnPesquisarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnPesquisarActionPerformed
@@ -435,6 +443,11 @@ public class FormularioClientes extends javax.swing.JFrame {
                 JOptionPane.showMessageDialog(null, "Cliente não encontrado!");
             }
     }//GEN-LAST:event_btnPesquisarActionPerformed
+
+    private void btnNovoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnNovoActionPerformed
+        Utilitarios util = new Utilitarios();
+        util.LimpaTela(painel_dados_pessoais);
+    }//GEN-LAST:event_btnNovoActionPerformed
 
     /**
      * @param args the command line arguments

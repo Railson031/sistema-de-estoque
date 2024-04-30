@@ -77,6 +77,7 @@ public class FormularioClientes extends javax.swing.JFrame {
         btnEditar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setResizable(false);
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -100,6 +101,8 @@ public class FormularioClientes extends javax.swing.JFrame {
         );
 
         jLabel2.setText("Código:");
+
+        txtCodigo.setEditable(false);
 
         jLabel3.setText("Nome:");
 

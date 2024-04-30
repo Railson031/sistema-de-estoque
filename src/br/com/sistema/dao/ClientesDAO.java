@@ -57,7 +57,7 @@ public class ClientesDAO {
         }
     }
     
-    public Clientes buscarCliente(String nome){
+    public Clientes BuscarCliente(String nome){
         try {
             String sql = "select * from tb_clientes where nome =?";
             PreparedStatement stmt = conn.prepareStatement(sql);
@@ -74,7 +74,7 @@ public class ClientesDAO {
                 obj.setCelular(rs.getString("celular"));
                 obj.setCep(rs.getString("cep"));
                 obj.setEndereco(rs.getString("endereco"));
-                obj.setNumero(rs.getInt("endereco"));
+                obj.setNumero(rs.getInt("numero"));
                 obj.setComplemento(rs.getString("complemento"));
                 obj.setCidade(rs.getString("cidade"));
                 obj.setBairro(rs.getString("bairro"));
